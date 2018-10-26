@@ -14,7 +14,13 @@ class ResumesController extends Controller
 
     public function store(Request $request)
     {
-        Task::create($request->all());
+        Resume::create($request->all());
         return redirect()->route('list');
+    }
+
+    public function list()
+    {
+        $resumes = Resume::all();
+        return view('resumes.list', ['resumes' => $resumes]);
     }
 }
