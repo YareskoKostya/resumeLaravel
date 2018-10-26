@@ -70,14 +70,14 @@
                 <div class="form-group" id="div" align="center">
                     <h5><label class="col-12 col-form-label">Education:</label></h5>
                 </div>
-                <?php include '../app/views/EducationView.php'; ?>
+                @include('resumes.study')
                 <div class="form-group"  id="study" align="center">
                     <input type="button" name="btnSubmit" class="btnContact" onclick="addStudy()" value="Add More"/>
                 </div>
                 <div class="form-group" id="div" align="center">
                     <h5><label class="col-12 col-form-label">Work:</label></h5>
                 </div>
-                <?php include '../app/views/WorkView.php'; ?>
+                @include('resumes.work')
                 <div class="form-group" id="work" align="center">
                     <input type="button" name="btnSubmit" class="btnContact" onclick="addWork()" value="Add More"/>
                 </div>
