@@ -11,4 +11,10 @@ class ResumesController extends Controller
     {
         return view('resumes.index');
     }
+
+    public function store(Request $request)
+    {
+        Task::create($request->all());
+        return redirect()->route('list');
+    }
 }

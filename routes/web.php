@@ -13,3 +13,5 @@
 
 Route::get('/', 'ResumesController@index')->name('index');
 
+Route::post('/store', 'ResumesController@store')->name('store');
+
