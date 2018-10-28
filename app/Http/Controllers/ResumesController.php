@@ -27,6 +27,6 @@ class ResumesController extends Controller
     public function show($id)
     {
         $myResume = Resume::find($id);
-        return view('show', ['resume' => $myResume]);
+        return view('resumes.show', ['resume' => $myResume]);
     }
 }
