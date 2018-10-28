@@ -1,0 +1,85 @@
+body{
+    background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+}
+.contact-form{
+    background: #fff;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.contact-form .form-control{
+    border-radius:1rem;
+}
+.contact-form .custom-select{
+    border-radius:1rem;
+}
+.contact-image img{
+    margin-bottom: 8%;
+    width: 350px;
+}
+.contact-form form{
+    padding: 3% 7% 5% 7%;
+}
+.contact-form label{
+    font-weight: bold;
+}
+h2{
+    padding-top: 5%;
+    color: #0062cc;
+}
+.contact-form h4{
+    margin-top: 20%;
+    margin-bottom: 8%;
+    color: #0062cc;
+}
+.contact-form .btnContact{
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #dc3545;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+#img-upload{
+    width: 350px;
+    margin-bottom: 30px;
+}
+#pointer{
+    cursor: pointer;
+}
+#h2list{
+    padding-top: 5%;
+    color: #0062cc;
+}
+#blue{
+    font-size: 25px;
+    color: #0062cc;
+}
+.col-12{
+    color: #0062cc;
+}
+#black{
+    font-size: 18px;
+    color: black;
+}
+#bluelist{
+    color: #0062cc;
+}
+#h2res{
+    padding-top: 5%;
+    padding-bottom: 3%;
+    color: #0062cc;
+}
+#res{
+    padding-bottom: 5%;
+}
+#div{
+    margin-bottom: -6%;
+}
+#int{
+    padding-top: 3%;
+}
+#study{
+    margin-top: -5%;
+}
