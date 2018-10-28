@@ -11,7 +11,7 @@
                     <h4>Your Photo</h4>
                     <img src="https://profile.actionsprout.com/default.jpeg" id='img-upload'/>
                     <br/>
-                    <input type="file" name="photo" id="imgInp" hidden>
+                    {{Form::file('photo', ['hidden', 'id' => 'imgInp'])}}
                     <div class="form-group">
                         <input type="button" name="btnSubmit" class="btnContact" onclick="addPhoto()" value="Add Photo"/>
                     </div>
@@ -91,7 +91,7 @@
         </div>
         <br/>
         <div class="form-group" align="center">
-            <input type="submit" name="btnSubmit" class="btnContact"  onclick="check()" value="Submit"/>
+            {{Form::submit('Submit', ['class' => 'btnContact', 'onclick' => 'check()'])}}
         </div>
         {!! Form::close() !!}
     </div>

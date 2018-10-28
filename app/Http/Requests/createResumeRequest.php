@@ -54,7 +54,8 @@ class createResumeRequest extends FormRequest
                 '1' => 'required',
                 '2' => 'required'
             ],
-            'interests' => 'required'
+            'interests' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
 }
