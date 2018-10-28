@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\createResumeRequest;
 use App\Resume;
 
 class ResumesController extends Controller
@@ -12,7 +13,7 @@ class ResumesController extends Controller
         return view('resumes.index');
     }
 
-    public function store(Request $request)
+    public function store(createResumeRequest $request)
     {
         Resume::create($request->all());
         return redirect()->route('list');
