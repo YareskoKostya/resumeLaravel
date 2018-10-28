@@ -23,4 +23,10 @@ class ResumesController extends Controller
         $resumes = Resume::all();
         return view('resumes.list', ['resumes' => $resumes]);
     }
+
+    public function show($id)
+    {
+        $myResume = Resume::find($id);
+        return view('show', ['resume' => $myResume]);
+    }
 }
