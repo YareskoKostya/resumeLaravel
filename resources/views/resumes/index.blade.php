@@ -72,14 +72,16 @@
                 </div>
                 @include('resumes.study')
                 <div class="form-group"  id="study" align="center">
-                    <input type="button" name="btnSubmit" class="btnContact" onclick="addStudy()" value="Add More"/>
+                    <input type="button" name="btnSubmit" class="btnContact" value="Add More"
+                           onclick="addStudy('{{ str_replace(array("\r","\n"), "", file_get_contents('..\resources\views\resumes\study.blade.php')) }}')"/>
                 </div>
                 <div class="form-group" id="div" align="center">
                     <h5><label class="col-12 col-form-label">Work:</label></h5>
                 </div>
                 @include('resumes.work')
                 <div class="form-group" id="work" align="center">
-                    <input type="button" name="btnSubmit" class="btnContact" onclick="addWork()" value="Add More"/>
+                    <input type="button" name="btnSubmit" class="btnContact" value="Add More"
+                           onclick="addWork('{{ str_replace(array("\r","\n"), "", file_get_contents('..\resources\views\resumes\work.blade.php')) }}')"/>
                 </div>
                 <div class="form-group row" id="int">
                     <label for="text-input" class="col-4 col-form-label">Your Interests:</label>

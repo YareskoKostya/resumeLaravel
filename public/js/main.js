@@ -26,3 +26,31 @@ $(document).ready( function() {
         readURL(this);
     });
 });
+x = 0;
+function addStudy(content) {
+    if (x < 2) {
+        $(content.replace("&amp;", /&/g)
+            .replace("&lt;", /</g)
+            .replace("&gt;", />/g)
+            .replace("&quot;", /"/g)
+            .replace("&#039;", /'/g)).insertBefore("#study");
+        x++;
+    } else
+    {
+        alert('Enough!');
+    }
+}
+y = 0;
+function addWork(content) {
+    if (y < 2) {
+        $(content.replace("&amp;", /&/g)
+            .replace("&lt;", /</g)
+            .replace("&gt;", />/g)
+            .replace("&quot;", /"/g)
+            .replace("&#039;", /'/g)).insertBefore("#work");
+        y++;
+    } else
+    {
+        alert('Enough!');
+    }
+}
