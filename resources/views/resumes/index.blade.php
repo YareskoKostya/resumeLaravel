@@ -3,8 +3,8 @@
 @section('content')
 
     @if($errors->any())
-        <div class="row" align="center">
-            <div class="col-6">
+        <div class="container">
+            <div class="col-8">
                 <div class="alert alert-danger" align="left">
                     <ul>
                         @foreach($errors->all() as $error)

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\createResumeRequest;
 use App\Resume;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
