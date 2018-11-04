@@ -23,17 +23,17 @@ class CreateResumesTable extends Migration
             $table->string('email');
             $table->string('address');
             for ($i = 0; $i < 3; $i++){
-                $table->date("datebeginstudy$i")->nullable();
-                $table->date("dateendstudy$i")->nullable();
-                $table->string("studyname$i")->nullable();
-                $table->string("proffessionstudy$i")->nullable();
-                $table->string("doctor$i")->nullable();
+                $table->date("datebeginstudy{$i}")->nullable();
+                $table->date("dateendstudy{$i}")->nullable();
+                $table->string("studyname{$i}")->nullable();
+                $table->string("professionstudy{$i}")->nullable();
+                $table->string("doctor{$i}")->nullable();
             }
             for ($j = 0; $j < 3; $j++){
-                $table->date("datebeginwork$j")->nullable();
-                $table->date("dateendwork$j")->nullable();
-                $table->string("workname$j")->nullable();
-                $table->string("proffessionwork$j")->nullable();
+                $table->date("datebeginwork{$j}")->nullable();
+                $table->date("dateendwork{$j}")->nullable();
+                $table->string("workname{$j}")->nullable();
+                $table->string("professionwork{$j}")->nullable();
             }
             $table->string('interests');
             $table->binary('photo');

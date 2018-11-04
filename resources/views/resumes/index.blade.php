@@ -3,7 +3,7 @@
 @section('content')
 
     <h2 align="center">Fill in resume</h2>
-    {!! Form::open(['route' => ['store'], 'files' => 'true']) !!}
+    {!! Form::open(['route' => ['store'], 'files' => true]) !!}
     <div class="row">
         <div class="col-md-6">
             <div class="form-group" align="center">

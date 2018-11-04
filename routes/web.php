@@ -15,7 +15,7 @@ Route::get('/', 'ResumesController@index')->name('index');
 
 Route::post('store', 'ResumesController@store')->name('store');
 
-Route::get('list', 'ResumesController@list')->name('list');
+Route::get('list', 'ResumesController@getList')->name('getList');
 
 Route::get('show/{id}', 'ResumesController@show')->name('show');
 

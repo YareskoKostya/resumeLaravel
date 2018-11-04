@@ -23,39 +23,25 @@ class createResumeRequest extends FormRequest
      */
     public function rules()
     {
+        $rulesStudyWork = [];
+        for ($i = 0; $i < 3; $i++) {
+            $rulesStudyWork += [
+                'studyname.{$i}' => 'required',
+                'professionstudy.{$i}' => 'required',
+                'doctor.{$i}' => 'required',
+                'workname.{$i}' => 'required',
+                'professionwork.{$i}' => 'required'
+            ];
+        }
         return [
             'name' => 'required',
             'surname' => 'required',
             'tel' => 'required',
-            'email' => 'required',
-            'address' => 'required',
-            'studyname' => [
-                '0' => 'required',
-                '1' => 'required',
-                '2' => 'required'
-                ],
-            'professionstudy' => [
-                '0' => 'required',
-                '1' => 'required',
-                '2' => 'required'
-            ],
-            'doctor' => [
-                '0' => 'required',
-                '1' => 'required',
-                '2' => 'required'
-            ],
-            'workname' => [
-                '0' => 'required',
-                '1' => 'required',
-                '2' => 'required'
-            ],
-            'professionwork' => [
-                '0' => 'required',
-                '1' => 'required',
-                '2' => 'required'
-            ],
-            'interests' => 'required',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'email' => 'required|email',
+            'address' => 'required'] +
+            $rulesStudyWork +
+            ['interests' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024'
         ];
     }
 }

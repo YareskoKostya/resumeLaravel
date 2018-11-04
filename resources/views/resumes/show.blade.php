@@ -7,7 +7,7 @@
         <div class="col-md-6">
             <div class="form-group" align="center">
                 <h4>Photo</h4>
-                <img width="350px" src="data:image/jpeg;base64,{{ base64_encode($resume->photo) }}"/>
+                <img width="350px" src="data:image/jpg;base64,{{ $resume->photo }}"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -43,28 +43,28 @@
                 <tr>
                     <td colspan="2" id="blue" align="center">Education:</td>
                 </tr>
-                @for ($i = 0; $i < 3; $i++)
-                <tr @if ($resume->datebeginstudy{$i} == NULL) hidden="" @endif>
+                @for($i = 0; $i < 3; $i++)
+                <tr @if ($resume["datebeginstudy{$i}"] == NULL) hidden @endif>
                     <td class="font-italic" id="black">Start Date:</td>
-                    <td class="font-weight-bold" id="black">{{ $resume->datebeginstudy{$i} }}</td>
+                    <td class="font-weight-bold" id="black">{{ $resume["datebeginstudy{$i}"] }}</td>
                 </tr>
-                <tr @if ($resume->dateendstudy{$i} == NULL) hidden="" @endif>
+                <tr @if ($resume["dateendstudy{$i}"] == NULL) hidden @endif>
                     <td class="font-italic" id="black">End Date:</td>
-                    <td class="font-weight-bold" id="black">{{ $resume->dateendstudy{$i} }}</td>
+                    <td class="font-weight-bold" id="black">{{ $resume["dateendstudy{$i}"] }}</td>
                 </tr>
-                <tr @if ($resume->studyname{$i} == NULL) hidden="" @endif>
+                <tr @if ($resume["studyname{$i}"] == NULL) hidden @endif>
                     <td class="font-italic" id="black">Institution Name:</td>
-                    <td class="font-weight-bold" id="black">{{ $resume->studyname{$i} }}</td>
+                    <td class="font-weight-bold" id="black">{{ $resume["studyname{$i}"] }}</td>
                 </tr>
-                <tr @if ($resume->professionstudy{$i} == NULL) hidden="" @endif>
+                <tr @if ($resume["professionstudy{$i}"] == NULL) hidden @endif>
                     <td class="font-italic" id="black">Specialty:</td>
-                    <td class="font-weight-bold" id="black">{{ $resume->professionstudy{$i} }}</td>
+                    <td class="font-weight-bold" id="black">{{ $resume["professionstudy{$i}"] }}</td>
                 </tr>
-                <tr @if ($resume->doctor{$i} == NULL) hidden="" @endif>
+                <tr @if ($resume["doctor{$i}"] == NULL) hidden @endif>
                     <td class="font-italic" id="black">Academic Degree:</td>
-                    <td class="font-weight-bold" id="black">{{ $resume->doctor{$i} }}</td>
+                    <td class="font-weight-bold" id="black">{{ $resume["doctor{$i}"] }}</td>
                 </tr>
-                <tr>
+                <tr @if ($resume["doctor{$i}"] == NULL) hidden @endif>
                     <td colspan="2" align="center"></td>
                 </tr>
                 @endfor
@@ -72,29 +72,29 @@
                     <td colspan="2" id="blue" align="center">Work:</td>
                 </tr>
                 @for ($j = 0; $j < 3; $j++)
-                <tr @if ($resume->datebeginwork{$j} == NULL) hidden="" @endif>
+                <tr @if ($resume["datebeginwork{$j}"] == NULL) hidden @endif>
                     <td class="font-italic" id="black">Start Work:</td>
-                    <td class="font-weight-bold" id="black">{{ $resume->datebeginwork{$i} }}</td>
+                    <td class="font-weight-bold" id="black">@php echo $resume["datebeginwork{$j}"] @endphp</td>
                 </tr>
-                <tr @if ($resume->dateendwork{$j} == NULL) hidden="" @endif>
+                <tr @if ($resume["dateendwork{$j}"] == NULL) hidden @endif>
                     <td class="font-italic" id="black">End Work:</td>
-                    <td class="font-weight-bold" id="black">{{ $resume->dateendwork{$i} }}</td>
+                    <td class="font-weight-bold" id="black">@php echo $resume["dateendwork{$j}"] @endphp</td>
                 </tr>
-                <tr @if ($resume->dateendwork{$j} == NULL) hidden="" @endif>
+                <tr @if ($resume["workname{$j}"] == NULL) hidden @endif>
                     <td class="font-italic" id="black">Company Name:</td>
-                    <td class="font-weight-bold" id="black">{{ $resume->workname{$i} }}</td>
+                    <td class="font-weight-bold" id="black">@php echo $resume["workname{$j}"] @endphp</td>
                 </tr>
-                <tr @if ($resume->professionwork{$j} == NULL) hidden="" @endif>
+                <tr @if ($resume["professionwork{$j}"] == NULL) hidden @endif>
                     <td class="font-italic" id="black">Specialty:</td>
-                    <td class="font-weight-bold" id="black">{{ $resume->professionwork{$i} }}</td>
+                    <td class="font-weight-bold" id="black">@php echo $resume["professionwork{$j}"] @endphp</td>
                 </tr>
-                <tr>
+                <tr @if ($resume["datebeginwork{$j}"] == NULL) hidden @endif>>
                     <td colspan="2" align="center"></td>
                 </tr>
                 @endfor
                 <tr>
                     <td class="font-italic" id="black">Interests:</td>
-                    <td class="font-weight-bold" id="black">value="{{ $resume->interests }}"</td>
+                    <td class="font-weight-bold" id="black">{{ $resume->interests }}</td>
                 </tr>
             </table>
         </div>
