@@ -39,6 +39,8 @@ class ResumesController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'surname' => 'required',
+            'birthdate' => 'required',
+            'country' => 'required',
             'tel' => 'required',
             'email' => 'required|email',
             'address' => 'required'

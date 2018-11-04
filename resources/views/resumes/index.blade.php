@@ -2,19 +2,7 @@
 
 @section('content')
 
-    @if($errors->any())
-        <div class="container">
-            <div class="col-8">
-                <div class="alert alert-danger" align="left">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
-    @endif
+@include('errors')
 
     <h2>Fill in resume</h2>
     {!! Form::open(['route' => ['store'], 'files' => true]) !!}
@@ -34,26 +22,26 @@
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your First Name:</label>
                 <div class="col-8">
-                    <input class="form-control" type="text" name="name" id="text-input">
+                    <input class="form-control" type="text" name="name" id="text-input" value="{{ old('name') }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Last Name:</label>
                 <div class="col-8">
-                    <input class="form-control" type="text" name="surname" id="text-input">
+                    <input class="form-control" type="text" name="surname" id="text-input" value="{{ old('surname') }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="date-input" class="col-4 col-form-label">Your Birthdate:</label>
                 <div class="col-8">
-                    <input class="form-control" type="date" name="birthdate" id="date-input">
+                    <input class="form-control" type="date" name="birthdate" id="date-input" value="{{ old('birthdate') }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Country:</label>
                 <div class="col-8">
                     <select class="custom-select" name="country" id="text-input">
-                        <option selected></option>
+                        <option selected>{{ old('country') }}</option>
                         <option>Ukraine</option>
                         <option>Belarus</option>
                         <option>Moldova</option>
@@ -65,19 +53,19 @@
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Telephone:</label>
                 <div class="col-8">
-                    <input class="form-control" type="tel" name="tel" id="text-input">
+                    <input class="form-control" type="tel" name="tel" id="text-input" value="{{ old('tel') }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Email:</label>
                 <div class="col-8">
-                    <input class="form-control" type="email" name="email" id="text-input">
+                    <input class="form-control" type="email" name="email" id="text-input" value="{{ old('email') }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Address:</label>
                 <div class="col-8">
-                    <input class="form-control" type="text" name="address" id="text-input">
+                    <input class="form-control" type="text" name="address" id="text-input" value="{{ old('address') }}">
                 </div>
             </div>
             <div class="form-group" align="center">
@@ -99,7 +87,7 @@
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Interests:</label>
                 <div class="col-8">
-                    <input class="form-control" type="text" name="interests" id="text-input">
+                    <input class="form-control" type="text" name="interests" id="text-input" value="{{ old('interests') }}">
                 </div>
             </div>
         </div>
