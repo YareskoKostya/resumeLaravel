@@ -36,7 +36,7 @@ class CreateResumesTable extends Migration
                 $table->string("professionwork{$j}")->nullable();
             }
             $table->string('interests');
-            $table->binary('photo');
+            $table->string('photo');
             $table->timestamps();
         });
     }

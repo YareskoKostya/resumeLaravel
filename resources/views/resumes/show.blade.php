@@ -7,7 +7,7 @@
         <div class="col-6">
             <div class="form-group" align="center">
                 <h4>Photo</h4>
-                <img width="350px" src="data:image/jpg;base64,{{ $resume->photo }}"/>
+                <img width="350px" src="{{ asset('uploads/resumes/' . $resume->photo) }}"/>
             </div>
         </div>
         <div class="col-6">

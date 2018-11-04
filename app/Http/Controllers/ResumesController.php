@@ -35,18 +35,19 @@ class ResumesController extends Controller
         $workname = $request->workname;
         $professionwork = $request->professionwork;
         $resume->interests = $request->interests;
-        
-        $photo = file_get_contents($request->photo->getRealPath());
-        $type = pathinfo($photo, PATHINFO_EXTENSION);
-        $resume->photo = base64_encode($photo);
 
-//        if ($request->hasFile('photo')) {
-//            $photo = $request->file('photo');
-//            $namePhoto = time() . '.' . $photo->getClientOriginalExtension();
-//            $destinationPath = public_path('/uploads/resumes');
-//            //$imagePath = $destinationPath . "/" . $namePhoto;
-//            $photo->move($destinationPath, $namePhoto);
-//        }
+//        $photo = file_get_contents($request->photo->getRealPath());
+//        $type = pathinfo($photo, PATHINFO_EXTENSION);
+//        $resume->photo = base64_encode($photo);
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $namePhoto = time() . '.' . $photo->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/resumes');
+            //$imagePath = $destinationPath . "/" . $namePhoto;
+            $photo->move($destinationPath, $namePhoto);
+            $resume->photo = $namePhoto;
+        }
 
         for ($i = 0; $i < count($datebeginstudy); $i++){
             $resume["datebeginstudy{$i}"] = $datebeginstudy[$i];
