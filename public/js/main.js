@@ -1,12 +1,6 @@
 function addPhoto(){
     document.getElementById('imgInp').click();
 }
-function check() {
-    if (!imgInp.required)
-    {
-        alert('Add Photo');
-    }
-}
 $(document).ready( function() {
 
     function readURL(input) {

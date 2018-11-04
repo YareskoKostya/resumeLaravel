@@ -2,7 +2,21 @@
 
 @section('content')
 
-    <h2 align="center">Fill in resume</h2>
+    @if($errors->any())
+        <div class="row" align="center">
+            <div class="col-6">
+                <div class="alert alert-danger" align="left">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    <h2>Fill in resume</h2>
     {!! Form::open(['route' => ['store'], 'files' => true]) !!}
     <div class="row">
         <div class="col-6">
@@ -20,25 +34,25 @@
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your First Name:</label>
                 <div class="col-8">
-                    <input class="form-control" type="text" name="name" id="text-input" required>
+                    <input class="form-control" type="text" name="name" id="text-input">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Last Name:</label>
                 <div class="col-8">
-                    <input class="form-control" type="text" name="surname" id="text-input" required>
+                    <input class="form-control" type="text" name="surname" id="text-input">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="date-input" class="col-4 col-form-label">Your Birthdate:</label>
                 <div class="col-8">
-                    <input class="form-control" type="date" name="birthdate" id="date-input" required>
+                    <input class="form-control" type="date" name="birthdate" id="date-input">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Country:</label>
                 <div class="col-8">
-                    <select class="custom-select" name="country" id="text-input" required>
+                    <select class="custom-select" name="country" id="text-input">
                         <option selected></option>
                         <option>Ukraine</option>
                         <option>Belarus</option>
@@ -51,19 +65,19 @@
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Telephone:</label>
                 <div class="col-8">
-                    <input class="form-control" type="tel" name="tel" id="text-input" required>
+                    <input class="form-control" type="tel" name="tel" id="text-input">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Email:</label>
                 <div class="col-8">
-                    <input class="form-control" type="email" name="email" id="text-input" required>
+                    <input class="form-control" type="email" name="email" id="text-input">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Address:</label>
                 <div class="col-8">
-                    <input class="form-control" type="text" name="address" id="text-input" required>
+                    <input class="form-control" type="text" name="address" id="text-input">
                 </div>
             </div>
             <div class="form-group" align="center">
@@ -85,14 +99,14 @@
             <div class="form-group row">
                 <label for="text-input" class="col-4 col-form-label">Your Interests:</label>
                 <div class="col-8">
-                    <input class="form-control" type="text" name="interests" id="text-input" required>
+                    <input class="form-control" type="text" name="interests" id="text-input">
                 </div>
             </div>
         </div>
     </div>
     <br/>
     <div class="form-group" align="center">
-        {{Form::submit('Submit', ['class' => 'btnContact', 'onclick' => 'check()'])}}
+        {{Form::submit('Submit', ['class' => 'btnContact'])}}
     </div>
     {!! Form::close() !!}
 

@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\createResumeRequest;
 use App\Resume;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class ResumesController extends Controller
 {
+    use ValidatesRequests;
+
     public function index()
     {
         return view('resumes.index');
@@ -15,6 +18,35 @@ class ResumesController extends Controller
 
     public function store(Request $request)
     {
+        $rulesStudy = [];
+        for ($i = 0; $i < count($request->datebeginstudy); $i++) {
+            $rulesStudy += [
+                "datebeginstudy{$i}" => 'required',
+                "dateendstudy{$i}" => 'required',
+                "studyname{$i}" => 'required',
+                "professionstudy{$i}" => 'required',
+                "doctor{$i}" => 'required'
+            ];
+        }
+        $rulesWork = [];
+        for ($j = 0; $j < count($request->datebeginwork); $j++) {
+            $rulesWork += [
+                "datebeginwork{$j}" => 'required',
+                "dateendwork{$j}" => 'required',
+                "workname{$j}" => 'required',
+                "professionwork{$j}" => 'required'
+            ];
+        }
+        $this->validate($request, [
+            'name' => 'required',
+            'surname' => 'required',
+            'tel' => 'required',
+            'email' => 'required|email',
+            'address' => 'required'
+        ] + $rulesStudy + $rulesWork + [
+            'interests' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            ]);
         $resume = new Resume();
         $resume->fill($request->all());
         $datebeginstudy = $request->datebeginstudy;

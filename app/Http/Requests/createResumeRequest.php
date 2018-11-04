@@ -26,11 +26,11 @@ class createResumeRequest extends FormRequest
         $rulesStudyWork = [];
         for ($i = 0; $i < 3; $i++) {
             $rulesStudyWork += [
-                'studyname.{$i}' => 'required',
-                'professionstudy.{$i}' => 'required',
-                'doctor.{$i}' => 'required',
-                'workname.{$i}' => 'required',
-                'professionwork.{$i}' => 'required'
+                "studyname{$i}" => 'required',
+                "professionstudy{$i}" => 'required',
+                "doctor{$i}" => 'required',
+                "workname{$i}" => 'required',
+                "professionwork{$i}" => 'required'
             ];
         }
         return [
