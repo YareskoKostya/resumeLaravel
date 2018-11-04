@@ -1,12 +1,12 @@
-<br/><div class="form-group row">
-    <label for="date-input" class="col-md-4 col-form-label">Start Work:</label>
-    <div class="col-md-8">
+<div class="form-group row">
+    <label for="date-input" class="col-4 col-form-label">Start Work:</label>
+    <div class="col-8">
         <input class="form-control" type="date" name="datebeginwork[]" id="date-input" required>
     </div>
 </div>
 <div class="form-group row">
-    <label for="date-input" class="col-md-4 col-form-label">End Work:</label>
-    <div class="col-md-8">
+    <label for="date-input" class="col-4 col-form-label">End Work:</label>
+    <div class="col-8">
         <input class="form-control" type="date" name="dateendwork[]" id="date-input" required>
     </div>
 </div>
@@ -22,3 +22,4 @@
         <input class="form-control" type="text" name="professionwork[]" id="text-input" required>
     </div>
 </div>
+<br/>

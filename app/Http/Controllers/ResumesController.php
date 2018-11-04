@@ -34,7 +34,6 @@ class ResumesController extends Controller
         $workname = $request->workname;
         $professionwork = $request->professionwork;
         $interests = $request->interests;
-
         $photo = file_get_contents($request->photo->getRealPath());
         $type = pathinfo($photo, PATHINFO_EXTENSION);
         $photoBase64 = base64_encode($photo);

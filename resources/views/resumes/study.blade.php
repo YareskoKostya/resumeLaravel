@@ -1,12 +1,12 @@
-<br/><div class="form-group row">
-    <label for="date-input" class="col-md-4 col-form-label">Start Date:</label>
-    <div class="col-md-8">
+<div class="form-group row">
+    <label for="date-input" class="col-4 col-form-label">Start Date:</label>
+    <div class="col-8">
         <input class="form-control" type="date" name="datebeginstudy[]" id="date-input" required>
     </div>
 </div>
 <div class="form-group row">
-    <label for="date-input" class="col-md-4 col-form-label">End Date:</label>
-    <div class="col-md-8">
+    <label for="date-input" class="col-4 col-form-label">End Date:</label>
+    <div class="col-8">
         <input class="form-control" type="date" name="dateendstudy[]" id="date-input" required>
     </div>
 </div>
@@ -28,3 +28,4 @@
         <input class="form-control" type="text" name="doctor[]" id="text-input" required>
     </div>
 </div>
+<br/>

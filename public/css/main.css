@@ -17,13 +17,14 @@ body{
     width: 350px;
 }
 .contact-form form{
-    padding: 3% 7% 5% 7%;
+    padding: 0 3% 5% 3%;
 }
 .contact-form label{
     font-weight: bold;
 }
-h2{
+.contact-form h2{
     padding-top: 5%;
+    padding-bottom: 3%;
     color: #0062cc;
 }
 .contact-form h4{
@@ -41,45 +42,31 @@ h2{
     color: #fff;
     cursor: pointer;
 }
-#img-upload{
+.contact-form #img-upload{
     width: 350px;
-    margin-bottom: 30px;
+    margin-bottom: 7%;
 }
-#pointer{
+.table-hover tbody{
     cursor: pointer;
 }
-#h2list{
-    padding-top: 5%;
+.contact-form .col-10{
+    padding-bottom: 5%;
+}
+.table-hover td{
     color: #0062cc;
 }
-#blue{
-    font-size: 25px;
-    color: #0062cc;
-}
-.col-12{
-    color: #0062cc;
-}
-#black{
+.col-6 tr{
     font-size: 18px;
     color: black;
 }
-#bluelist{
+.contact-form .col-12{
+    font-size: 25px;
     color: #0062cc;
 }
-#h2res{
-    padding-top: 5%;
-    padding-bottom: 3%;
-    color: #0062cc;
-}
-#res{
+.col-6 .button{
     padding-bottom: 5%;
 }
-#div{
-    margin-bottom: -6%;
-}
-#int{
-    padding-top: 3%;
-}
-#study{
-    margin-top: -5%;
+.contact-form .show{
+    padding-bottom: 5%;
+    padding-right: 7%;
 }
